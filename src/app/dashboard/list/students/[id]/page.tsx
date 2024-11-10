@@ -23,7 +23,11 @@ const SingleStudentPage = () => {
           </div>
 
           <div className="w-2/3 flex flex-col justify-between gap-4">
+<<<<<<< HEAD
           <h1 className="text-xl font-semibold">Nurulain Nassir</h1>
+=======
+          <h1 className="text-xl font-semibold">Juma Ally</h1>
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
           <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nulla.</p>
           <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
@@ -36,7 +40,11 @@ const SingleStudentPage = () => {
             </div>
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/mail.png" alt="" width={14} height={14}/>
+<<<<<<< HEAD
               <span>nurulain@gmail.com</span>
+=======
+              <span>user@gmail.com</span>
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
             </div>
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/phone.png" alt="" width={14} height={14}/>

@@ -6,6 +6,7 @@ export const teachersData = [
   {
     id: 1,
     teacherId: "1234567890",
+<<<<<<< HEAD
     name: "Mussa Matiko",
     email: "mussa@gmail.com",
     photo:
@@ -14,10 +15,21 @@ export const teachersData = [
     subjects: ["Physics", "Chemistry"],
     classes: ["5A", "4B", "3C"],
     address: "Sinza Dar,TZ",
+=======
+    name: "John Doe",
+    email: "john@doe.com",
+    photo:
+      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Math", "Geometry"],
+    classes: ["1B", "2A", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 2,
     teacherId: "1234567890",
+<<<<<<< HEAD
     name: "Nassir Mohamed",
     email: "nassirnasr@gmail.com",
     photo:
@@ -28,21 +40,41 @@ export const teachersData = [
     address: "Ferry ,Kigamboni TZ",
   },
  
+=======
+    name: "Jane Doe",
+    email: "jane@doe.com",
+    photo:
+      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Physics", "Chemistry"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+  },
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   {
     id: 3,
     teacherId: "1234567890",
     name: "Mike Geller",
     email: "mike@geller.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Biology"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 4,
     teacherId: "1234567890",
+<<<<<<< HEAD
     name: "Jay Frank",
     email: "jay@gmail.com",
     photo:
@@ -51,10 +83,21 @@ export const teachersData = [
     subjects: ["History"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+    name: "Jay French",
+    email: "jay@gmail.com",
+    photo:
+      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["History"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 5,
     teacherId: "1234567890",
+<<<<<<< HEAD
     name: "Judith Joel",
     email: "judith@gmail.com",
     photo:
@@ -63,6 +106,16 @@ export const teachersData = [
     subjects: ["Music", "History"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+    name: "Jane Smith",
+    email: "jane@gmail.com",
+    photo:
+      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Music", "History"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 6,
@@ -70,11 +123,19 @@ export const teachersData = [
     name: "Anna Santiago",
     email: "anna@gmail.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     subjects: ["Physics"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Physics"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 7,
@@ -82,15 +143,24 @@ export const teachersData = [
     name: "Allen Black",
     email: "allen@black.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     subjects: ["English", "Spanish"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["English", "Spanish"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 8,
     teacherId: "1234567890",
+<<<<<<< HEAD
     name: "Kelvin John",
     email: "kelvin@gmail.com",
     photo:
@@ -99,6 +169,16 @@ export const teachersData = [
     subjects: ["Math", "Geometry"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+    name: "Ophelia Castro",
+    email: "ophelia@castro.com",
+    photo:
+      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Math", "Geometry"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 9,
@@ -106,11 +186,19 @@ export const teachersData = [
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     subjects: ["Literature", "English"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Literature", "English"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 10,
@@ -118,11 +206,19 @@ export const teachersData = [
     name: "John Glover",
     email: "john@glover.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    subjects: ["Biology"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
 ];
 
@@ -133,11 +229,19 @@ export const studentsData = [
     name: "John Doe",
     email: "john@doe.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "1B",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "1B",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 2,
@@ -145,11 +249,19 @@ export const studentsData = [
     name: "Jane Doe",
     email: "jane@doe.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 3,
@@ -157,11 +269,19 @@ export const studentsData = [
     name: "Mike Geller",
     email: "mike@geller.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 4,
@@ -169,11 +289,19 @@ export const studentsData = [
     name: "Jay French",
     email: "jay@gmail.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 5,
@@ -181,11 +309,19 @@ export const studentsData = [
     name: "Jane Smith",
     email: "jane@gmail.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 6,
@@ -193,11 +329,19 @@ export const studentsData = [
     name: "Anna Santiago",
     email: "anna@gmail.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 7,
@@ -205,11 +349,19 @@ export const studentsData = [
     name: "Allen Black",
     email: "allen@black.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 8,
@@ -217,11 +369,19 @@ export const studentsData = [
     name: "Ophelia Castro",
     email: "ophelia@castro.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 9,
@@ -229,11 +389,19 @@ export const studentsData = [
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 10,
@@ -241,22 +409,38 @@ export const studentsData = [
     name: "John Glover",
     email: "john@glover.com",
     photo:
+<<<<<<< HEAD
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
     class: "5A",
     address: "Ferry ,Kigamboni TZ",
+=======
+      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: "1234567890",
+    grade: 5,
+    class: "5A",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
 ];
 
 export const parentsData = [
   {
     id: 1,
+<<<<<<< HEAD
     name: "John John",
     students: ["Sarah John"],
     email: "john@gmail.com",
     phone: "1234567890",
     address: "Ferry ,Kigamboni TZ",
+=======
+    name: "John Doe",
+    students: ["Sarah Brewer"],
+    email: "john@doe.com",
+    phone: "1234567890",
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 2,
@@ -264,7 +448,11 @@ export const parentsData = [
     students: ["Cecilia Bradley"],
     email: "jane@doe.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 3,
@@ -272,7 +460,11 @@ export const parentsData = [
     students: ["Fanny Caldwell"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 4,
@@ -280,7 +472,11 @@ export const parentsData = [
     students: ["Mollie Fitzgerald", "Ian Bryant"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 5,
@@ -288,7 +484,11 @@ export const parentsData = [
     students: ["Mable Harvey"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 6,
@@ -296,7 +496,11 @@ export const parentsData = [
     students: ["Joel Lambert"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 7,
@@ -304,7 +508,11 @@ export const parentsData = [
     students: ["Carrie Tucker", "Lilly Underwood"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 8,
@@ -312,7 +520,11 @@ export const parentsData = [
     students: ["Alexander Blair"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 9,
@@ -320,7 +532,11 @@ export const parentsData = [
     students: ["Susan Webster", "Maude Stone"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
   {
     id: 10,
@@ -328,7 +544,11 @@ export const parentsData = [
     students: ["Stella Scott"],
     email: "mike@geller.com",
     phone: "1234567890",
+<<<<<<< HEAD
     address: "Ferry ,Kigamboni TZ",
+=======
+    address: "123 Main St, Anytown, USA",
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
   },
 ];
 

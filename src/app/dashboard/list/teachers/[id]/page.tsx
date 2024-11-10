@@ -15,7 +15,11 @@ const SingleTeacherPage = () => {
         <div className="bg-mySky py-6 px-4 rounded-md flex-1 flex gap-4">
           <div className="w-1/3">
           <Image 
+<<<<<<< HEAD
           src="/mussa.jpg" 
+=======
+          src="/tprofile.jpg" 
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
           alt="" 
           width={144} 
           height={144} 
@@ -23,7 +27,11 @@ const SingleTeacherPage = () => {
           </div>
 
           <div className="w-2/3 flex flex-col justify-between gap-4">
+<<<<<<< HEAD
           <h1 className="text-xl font-semibold">Mussa Matiko</h1>
+=======
+          <h1 className="text-xl font-semibold">Nassor Nassir</h1>
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
           
           <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nulla.</p>
           <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
@@ -37,7 +45,11 @@ const SingleTeacherPage = () => {
             </div>
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/mail.png" alt="" width={14} height={14}/>
+<<<<<<< HEAD
               <span>mussa@gmail.com</span>
+=======
+              <span>user@gmail.com</span>
+>>>>>>> c86313c344903d7a4b75557758910b1939e16882
             </div>
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/phone.png" alt="" width={14} height={14}/>
