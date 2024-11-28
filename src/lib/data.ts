@@ -998,27 +998,27 @@ export const calendarEvents = [
   {
     title: "Math",
     allDay: false,
-    start: new Date(2024, 10, 4, 8, 0),
-    end: new Date(2024, 10, 4, 8, 45),
+    start: new Date(2024, 11, 28, 8, 0),
+    end: new Date(2024, 11, 28, 8, 45),
   },
   {
     title: "Biology",
     allDay: false,
-    start: new Date(2024, 10, 4, 10, 0),
-    end: new Date(2024, 10, 4, 10, 45),
+    start: new Date(2024, 11, 28, 10, 0),
+    end: new Date(2024, 11, 28, 10, 45),
   },
 
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2024, 10, 4, 13, 0),
-    end: new Date(2024, 10, 4, 13, 45),
+    start: new Date(2024, 11, 28, 13, 0),
+    end: new Date(2024, 11, 28, 13, 45),
   },
   {
     title: "History",
     allDay: false,
-    start: new Date(2024, 10, 4, 14, 0),
-    end: new Date(2024, 10, 13, 4, 45),
+    start: new Date(2024, 11, 28, 14, 0),
+    end: new Date(2024, 11, 28, 14, 45),
   },
   {
     title: "English",

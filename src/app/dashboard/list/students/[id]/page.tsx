@@ -26,8 +26,6 @@ const SingleStudentPage = () => {
 
           <h1 className="text-xl font-semibold">Nassor Nassir</h1>
 
-          <h1 className="text-xl font-semibold">Nurulain Nassir</h1>
-
           <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nulla.</p>
           <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
@@ -41,7 +39,7 @@ const SingleStudentPage = () => {
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/mail.png" alt="" width={14} height={14}/>
 
-              <span>nurulain@gmail.com</span>
+              <span>nasr@gmail.com</span>
             </div>
             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
               <Image src="/phone.png" alt="" width={14} height={14}/>
