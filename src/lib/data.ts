@@ -70,6 +70,7 @@ export const teachersData = [
     email: "anna@gmail.com",
     photo:
       "/avatar.png",
+
     phone: "1234567890",
     subjects: ["Physics"],
     classes: ["5A", "4B", "3C"],
@@ -82,6 +83,7 @@ export const teachersData = [
     email: "allen@black.com",
     photo:
       "/avatar.png",
+      
     phone: "1234567890",
     subjects: ["English", "Spanish"],
     classes: ["5A", "4B", "3C"],
@@ -94,6 +96,7 @@ export const teachersData = [
     email: "ophelia@castro.com",
     photo:
       "/avatar.png",
+      
     phone: "1234567890",
     subjects: ["Math", "Geometry"],
     classes: ["5A", "4B", "3C"],
@@ -105,7 +108,9 @@ export const teachersData = [
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
+
       "/avatar.png",
+
     phone: "1234567890",
     subjects: ["Literature", "English"],
     classes: ["5A", "4B", "3C"],
@@ -117,7 +122,9 @@ export const teachersData = [
     name: "John Glover",
     email: "john@glover.com",
     photo:
+
       "/avatar.png",
+     
     phone: "1234567890",
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
@@ -129,6 +136,7 @@ export const studentsData = [
   {
     id: 1,
     studentId: "1234567890",
+
     name: "Nassor Nasr",
     email: "nasr@gmail.com",
     photo:
@@ -144,6 +152,7 @@ export const studentsData = [
     name: "Jane Doe",
     email: "jane@doe.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -156,6 +165,7 @@ export const studentsData = [
     name: "Mike Geller",
     email: "mike@geller.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -180,6 +190,7 @@ export const studentsData = [
     name: "Jane Smith",
     email: "jane@gmail.com",
     photo:
+
      "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -192,6 +203,7 @@ export const studentsData = [
     name: "Anna Santiago",
     email: "anna@gmail.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -204,6 +216,7 @@ export const studentsData = [
     name: "Allen Black",
     email: "allen@black.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -216,6 +229,7 @@ export const studentsData = [
     name: "Ophelia Castro",
     email: "ophelia@castro.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -228,6 +242,7 @@ export const studentsData = [
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,
@@ -240,6 +255,7 @@ export const studentsData = [
     name: "John Glover",
     email: "john@glover.com",
     photo:
+
       "/avatar.png",
     phone: "1234567890",
     grade: 5,

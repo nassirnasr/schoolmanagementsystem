@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
   width: 8px; /* Width of the scrollbar */
