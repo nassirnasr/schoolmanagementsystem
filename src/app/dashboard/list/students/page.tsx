@@ -46,7 +46,7 @@ const StudentListPage = () => {
     const renderRow = (item:Student) => (
         <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-myPurpleLight">
             <td className="flex items-center gap-4 p-4">
-                <Image src="/item.photo" alt="" width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
+            <Image src={item.photo} alt={item.name} width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
                 <div className="flex flex-col">
                     <h3 className="font-semibold">{item.name}</h3>
                     <p className="text-xs text-gray-500">{item.class}</p>
@@ -58,7 +58,7 @@ const StudentListPage = () => {
             <td className="hidden md:table-cell">{item.address}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/dashboard/list/teachers/${item.id}`} className="">
+                    <Link href={`/dashboard/list/students/${item.id}`} className="">
                     <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mySky">
                         <Image src="/view.png" alt="" width={16} height={16}/>
                     </button>
