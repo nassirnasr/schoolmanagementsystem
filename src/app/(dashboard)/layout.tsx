@@ -19,8 +19,8 @@ export default function DashboardLayout({
             <span className="hidden lg:block font-bold">Shule System</span>
           </Link>
         </div>
-        {/* Scrollable Menu */}
-        <div className="overflow-y-auto flex-grow">
+        {/* Menu */}
+        <div className="lg:overflow-y-auto lg:flex-grow ">
           <Menu />
         </div>
       </div>
