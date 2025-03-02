@@ -2,44 +2,10 @@
 import Image from 'next/image';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: 'Mon',
-    present: 40,
-    absent: 60,
-  },
-  {
-    name: 'Tue',
-   
-    present: 98,
-    absent: 40,
-  },
-  {
-    name: 'Wed',
 
-    present: 50,
-    absent: 50,
-  },
-  {
-    name: 'Thu',
-
-    present:60,
-    absent: 40,
-  },
-  {
-    name: 'Fri',
-
-    present: 48,
-    absent: 22,
-  },
-];
-const AttandanceChart = () => {
+const AttandanceChart = ({data} : {data: {name:string, present:number, absent:number}[];}) => {
   return (
-    <div className='bg-white rounded-lg p-4 h-full'>
-        <div className='flex justify-between items-center'>
-            <h1 className='font-semibold text-lg'>Attandance</h1>
-            <Image src="/moreDark.png" alt="" width={20} height={20}/>
-        </div>
+   
         <ResponsiveContainer width="100%" height="90%">
         <BarChart
           width={500}
@@ -64,7 +30,7 @@ const AttandanceChart = () => {
           <Bar dataKey="absent" fill="#FAE27C" legendType='circle'/>
         </BarChart>
       </ResponsiveContainer>
-    </div>
+  
   )
 }
 
