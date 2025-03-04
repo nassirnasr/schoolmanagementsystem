@@ -1,10 +1,26 @@
 import Announcements from "@/components/Announcements"
 import BigCalendar from "@/components/BigCalendar"
+import BigCalendarContainer from "@/components/BigCalenderContainer"
 import Performance from "@/components/Performance"
 import Image from "next/image"
 import Link from "next/link"
+import prisma from "@/lib/prisma"
+import { useRouter } from "next/router"
+import { Teacher } from "@prisma/client"
 
-const SingleTeacherPage = () => {
+const SingleTeacherPage = async () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  // Fetch the teacher's data from the database
+  const teacher: Teacher | null = await prisma.teacher.findUnique({
+    where: { id: id as string }, // Ensure id is a string
+  })
+
+  if (!teacher) {
+    return <div>Teacher not found</div> // Handle case where teacher is not found
+  }
+
   return (
     <div className='flex-1 p-4 flex flex-col gap-4 xl:flex-row'>
         {/* LEFT */}
@@ -15,8 +31,8 @@ const SingleTeacherPage = () => {
         <div className="bg-mySky py-6 px-4 rounded-md flex-1 flex gap-4">
           <div className="w-1/3">
           <Image 
-          src="/mussa.jpg" 
-          alt="" 
+          src={teacher.img || "/noAvatar.png"} 
+          alt={teacher.name} 
           width={144} 
           height={144} 
           className="w-36 h-36 rounded-full object-cover"/>
@@ -24,7 +40,7 @@ const SingleTeacherPage = () => {
 
           <div className="w-2/3 flex flex-col justify-between gap-4">
 
-          <h1 className="text-xl font-semibold">Mussa Matiko</h1>
+          <h1 className="text-xl font-semibold">{teacher.name}</h1>
 
           
           <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nulla.</p>
@@ -89,7 +105,7 @@ const SingleTeacherPage = () => {
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
           <h1 className="">Teacher&apos;s Schedule</h1>
-          <BigCalendar/>
+          <BigCalendarContainer type="teacherId" id={teacher.id} />
         </div>
         </div>
         {/* RIGHT */}
