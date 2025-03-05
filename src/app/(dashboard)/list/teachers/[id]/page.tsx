@@ -5,20 +5,37 @@ import Performance from "@/components/Performance"
 import Image from "next/image"
 import Link from "next/link"
 import prisma from "@/lib/prisma"
-import { useRouter } from "next/router"
 import { Teacher } from "@prisma/client"
+import { auth } from "@clerk/nextjs/server"
+import { notFound } from "next/navigation"
 
-const SingleTeacherPage = async () => {
-  const router = useRouter()
-  const { id } = router.query
+const SingleTeacherPage = async ({
+  params: { id },
+}: {
+  params: { id: string };
+}) => {
+  const { sessionClaims } = await auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
 
-  // Fetch the teacher's data from the database
-  const teacher: Teacher | null = await prisma.teacher.findUnique({
-    where: { id: id as string }, // Ensure id is a string
-  })
+  const teacher:
+    | (Teacher & {
+        _count: { subjects: number; lessons: number; classes: number };
+      })
+    | null = await prisma.teacher.findUnique({
+    where: { id },
+    include: {
+      _count: {
+        select: {
+          subjects: true,
+          lessons: true,
+          classes: true,
+        },
+      },
+    },
+  });
 
   if (!teacher) {
-    return <div>Teacher not found</div> // Handle case where teacher is not found
+    return notFound();
   }
 
   return (
