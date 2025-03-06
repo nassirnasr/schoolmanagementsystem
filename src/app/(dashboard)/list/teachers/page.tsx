@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Prisma } from "@prisma/client"
 import { currentUserId, getRole } from "@/lib/utils"
+import { FaEye, FaUserCircle } from "react-icons/fa"
 
 type TeacherList = Teacher & {subjects:Subject[]} & {classes:Class[]}
 
@@ -50,7 +51,17 @@ const renderRow = (item:TeacherList) => (
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-myPurpleLight">
         <td className="flex items-center gap-4 p-4">
 
-        <Image src={item.img || "/noAvatar.png"} alt={item.name} width={40} height={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/>
+        {item.img ? (
+          <Image
+            src={item.img}
+            alt={item.name}
+            width={40}
+            height={40}
+            className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
+          />
+        ) : (
+          <FaUserCircle className="md:hidden xl:block w-8 h-8 text-gray-500" />
+        )}
             <div className="flex flex-col">
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-xs text-gray-500">{item?.email}</p>
@@ -64,8 +75,9 @@ const renderRow = (item:TeacherList) => (
         <td>
             <div className="flex items-center gap-2">
                 <Link href={`/list/teachers/${item.id}`} className="">
-                <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mySky">
-                    <Image src="/view.png" alt="" width={16} height={16}/>
+                <button className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-200">
+                    {/* <Image src="/view.png" alt="" width={16} height={16}/> */}
+                    <FaEye className="md:hidden xl:block text-gray-500" size={18} />
                 </button>
                 </Link>
                 {userRole==="admin" && (
@@ -73,7 +85,6 @@ const renderRow = (item:TeacherList) => (
                 )}
             </div>
         </td>
-
     </tr>
 
             );
@@ -122,7 +133,6 @@ const [data, count] = await prisma.$transaction([
 ]);
 
 
-// console.log(data)
 
   return (
     <div className='bg-white flex-1 rounded-md m-4 mt-0 p-4'>
@@ -139,9 +149,6 @@ const [data, count] = await prisma.$transaction([
                     <Image src="/sort.png" alt="" width={14} height={14}/>
                 </button>
                 {userRole === "admin" && (
-                //     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myYellow">
-                //     <Image src="/plus.png" alt="" width={14} height={14}/>
-                // </button>
                 <FormModel table="teacher" type="create"/>
                 )}
             </div>

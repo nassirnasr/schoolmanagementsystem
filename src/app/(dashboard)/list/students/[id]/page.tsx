@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { FaUserCircle } from "react-icons/fa";
 
 const SingleStudentPage = async ({
   params: { id },
@@ -42,13 +43,17 @@ const SingleStudentPage = async ({
           {/* USER INFO CARD */}
           <div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
-              <Image
-                src={student.img || "/noAvatar.png"}
-                alt=""
-                width={144}
-                height={144}
-                className="w-36 h-36 rounded-full object-cover"
-              />
+              {student.img ? (
+                <Image
+                  src={student.img}
+                  alt=""
+                  width={144}
+                  height={144}
+                  className="w-36 h-36 rounded-full object-cover"
+                />
+              ) : (
+                <FaUserCircle className="w-36 h-36 text-gray-500" />
+              )}
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
