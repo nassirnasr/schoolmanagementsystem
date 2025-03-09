@@ -5,12 +5,13 @@ import FormModel from "@/components/FormModel";
 import Performance from "@/components/Performance";
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
-import { Class, Parent } from "@prisma/client"; // Import Parent
+import { Class, Parent } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaEnvelope, FaLocationArrow, FaPhoneAlt, FaSearchLocation, FaUserCircle } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 const SingleParentPage = async ({
   params: { id },
@@ -38,7 +39,7 @@ const SingleParentPage = async ({
         {/* TOP */}
         <div className="flex flex-col lg:flex-row gap-4">
           {/* USER INFO CARD */}
-          <div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
+          <div className="bg-mySky py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               {/* Commenting out image logic since there are no images in the database */}
               {/* {parent.img ? (
@@ -65,12 +66,15 @@ const SingleParentPage = async ({
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                  <FaPhoneAlt size={18}/>
                   <span>{parent.phone || "-"}</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                <FaEnvelope size={18}/>
                   <span>{parent.email || "-"}</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                    <FaLocationArrow size={18}/>
                   <span>{parent.address || "-"}</span>
                 </div>
               </div>

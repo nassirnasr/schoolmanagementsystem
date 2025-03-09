@@ -4,22 +4,27 @@ import { revalidatePath } from "next/cache";
 import prisma from "./prisma";
 import { SubjectSchema } from "./formValidationSchemas";
 
-export const createSubject = async (data: SubjectSchema) => {
+type CurrentState = { success: boolean; error: boolean };
+
+export const createSubject = async (
+  currentState: CurrentState,
+  data: SubjectSchema
+) => {
   try {
     await prisma.subject.create({
       data: {
         name: data.name,
         teachers: {
-          connect: data.teachers.map((teacherId) => ({ id: teacherId })),
+          connect: data.teachers?.map((teacherId) => ({ id: teacherId })) || [],
         },
       },
     });
 
     revalidatePath("/list/subjects");
     return { success: true, error: false };
-  } catch (err) {
-    console.log(err);
-    return { success: false, error: true };
+  } catch (err: any) {
+    console.error("Server error in createSubject:", err);
+    return { success: false, error: true, message: err.message };
   }
 };
 
@@ -30,35 +35,32 @@ export const updateSubject = async (data: SubjectSchema) => {
       data: {
         name: data.name,
         teachers: {
-          set: data.teachers.map((teacherId) => ({ id: teacherId })),
+          set: data.teachers?.map((teacherId) => ({ id: teacherId })) || [],
         },
       },
     });
 
     revalidatePath("/list/subjects");
     return { success: true, error: false };
-  } catch (err) {
-    console.log(err);
-    return { success: false, error: true };
+  } catch (err: any) {
+    console.error("Server error in updateSubject:", err);
+    return { success: false, error: true, message: err.message };
   }
 };
 
 export const deleteSubject = async (data: FormData) => {
-    const id = data.get("id") as string;
-    try {
-      await prisma.subject.delete({
-        where: {
-          id: parseInt(id), // Convert id to a number
-        },
-      });
-  
-      revalidatePath("/list/subjects");
-      return { success: true, error: false };
-    } catch (err) {
-      console.log(err);
-      return { success: false, error: true };
-    }
-  };
+  const id = data.get("id") as string;
+  try {
+    await prisma.subject.delete({
+      where: { id: parseInt(id) },
+    });
+    revalidatePath("/list/subjects");
+    return { success: true, error: false };
+  } catch (err: any) {
+    console.error("Server error in deleteSubject:", err);
+    return { success: false, error: true, message: err.message };
+  }
+};
 
 
 // export const createClass = async (

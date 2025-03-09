@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { currentUser } from "@clerk/nextjs/server";
+"use client";
 
-// Heroicons from react-icons/hi
+import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
+// Import icons from react-icons (Heroicons & FontAwesome)
 import {
   HiHome,
   HiPencilAlt,
@@ -14,10 +15,21 @@ import {
   HiLogout,
   HiOutlineViewGrid,
 } from "react-icons/hi";
+import {
+  FaChalkboardTeacher,
+  FaUserGraduate,
+  FaUserFriends,
+  FaUser,
+  FaCalendarAlt,
+  FaBook,
+  FaBookReader,
+  FaCoins,
+} from "react-icons/fa";
 
-// FontAwesome icons for Teachers, Students, and Parents
-import { FaChalkboardTeacher, FaUserGraduate, FaUserFriends, FaUser, FaCalendarAlt, FaBook, FaBookReader, FaCoins} from "react-icons/fa";
-import FinanceChart from "./FinanceChart";
+type MenuProps = {
+  isOpen: boolean;
+  onItemClick?: () => void;
+};
 
 const menuItems = [
   {
@@ -50,16 +62,19 @@ const menuItems = [
   },
 ];
 
-const Menu = async () => {
-  const user = await currentUser();
-  const role = user?.publicMetadata.role as string;
+const Menu = ({ isOpen, onItemClick }: MenuProps) => {
+  const { user } = useUser();
+  const role = (user?.publicMetadata?.role as string) || "admin";
+
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((section) => (
         <div className="flex flex-col gap-2" key={section.title}>
-          <span className="hidden lg:block text-gray-400 font-light my-4">
-            {section.title}
-          </span>
+          {isOpen && (
+            <span className="text-gray-400 font-light my-4">
+              {section.title}
+            </span>
+          )}
           {section.items.map((item) => {
             if (item.visible.includes(role)) {
               const IconComponent = item.icon;
@@ -67,12 +82,16 @@ const Menu = async () => {
                 <Link
                   href={item.href}
                   key={item.label}
-                  className={`flex items-center gap-2 py-2 px-2 rounded-md hover:bg-lamaSkyLight ${
+                  title={!isOpen ? item.label : undefined}
+                  onClick={() => {
+                    if (onItemClick) onItemClick();
+                  }}
+                  className={`flex items-center gap-2 py-2 px-2 rounded-md hover:bg-mySky ${
                     item.label === "Logout" ? "text-red-500" : "text-gray-500"
                   }`}
                 >
                   <IconComponent className="text-base" />
-                  <span className="hidden lg:block">{item.label}</span>
+                  {isOpen && <span>{item.label}</span>}
                 </Link>
               );
             }

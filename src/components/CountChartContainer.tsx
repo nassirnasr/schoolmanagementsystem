@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CountChart from "./CountChart"
 import prisma from "@/lib/prisma";
+import { FaEllipsisH } from "react-icons/fa";
 
 const CountChartContainer = async () => {
     const data = await prisma.student.groupBy({
@@ -16,7 +17,7 @@ const CountChartContainer = async () => {
         {/* TITLE */}
         <div className='flex items-center justify-between'>
             <h1 className='text-lg font-semibold'>Students</h1>
-            <Image src="/moreDark.png" alt='' width={20} height={20}/>
+            <FaEllipsisH size={18} className="text-gray-500 cursor-pointer"/>
         </div>
         {/* CHART */}
             <CountChart boys={boys} girls={girls}/>

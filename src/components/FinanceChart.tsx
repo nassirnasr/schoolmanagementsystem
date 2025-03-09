@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { FaEllipsisH } from "react-icons/fa";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -85,7 +86,7 @@ const FinanceChart = () => {
         {/* TITLE */}
         <div className='flex items-center justify-between'>
             <h1 className='text-lg font-semibold'>Finance</h1>
-            <Image src="/moreDark.png" alt='' width={20} height={20}/>
+            <FaEllipsisH size={18} className="text-gray-500 cursor-pointer"/>
         </div>
         <ResponsiveContainer width="100%" height="95%">
         <LineChart

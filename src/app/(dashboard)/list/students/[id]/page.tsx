@@ -9,7 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaCalendarAlt, FaEnvelope, FaPhoneAlt, FaTint, FaUserCircle} from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 const SingleStudentPage = async ({
   params: { id },
@@ -41,7 +42,7 @@ const SingleStudentPage = async ({
         {/* TOP */}
         <div className="flex flex-col lg:flex-row gap-4">
           {/* USER INFO CARD */}
-          <div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
+          <div className="bg-mySky py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               {student.img ? (
                 <Image
@@ -69,21 +70,24 @@ const SingleStudentPage = async ({
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                  <Image src="/blood.png" alt="" width={14} height={14} />
+                  <FaTint size={18} />
                   <span>{student.bloodType}</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                  <Image src="/date.png" alt="" width={14} height={14} />
+                  {/* <Image src="/date.png" alt="" width={14} height={14} /> */}
+                  <FaCalendarAlt size={18}/>
                   <span>
                     {new Intl.DateTimeFormat("en-GB").format(student.birthday)}
                   </span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                  <Image src="/mail.png" alt="" width={14} height={14} />
+                  {/* <Image src="/mail.png" alt="" width={14} height={14} /> */}
+                  <FaEnvelope size={18} />
                   <span>{student.email || "-"}</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                  <Image src="/phone.png" alt="" width={14} height={14} />
+                  {/* <Image src="/phone.png" alt="" width={14} height={14} /> */}
+                  <FaPhoneAlt size={18}/>
                   <span>{student.phone || "-"}</span>
                 </div>
               </div>

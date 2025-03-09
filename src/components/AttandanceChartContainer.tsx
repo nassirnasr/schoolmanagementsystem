@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AttandanceChart from "./AttandanceChart";
 import prisma from "@/lib/prisma";
+import { FaEllipsisH } from "react-icons/fa";
 
 const AttandanceChartContainer = async () => {
 
@@ -56,7 +57,7 @@ const AttandanceChartContainer = async () => {
         <div className='bg-white rounded-lg p-4 h-full'>
         <div className='flex justify-between items-center'>
             <h1 className='font-semibold text-lg'>Attandance</h1>
-            <Image src="/moreDark.png" alt="" width={20} height={20}/>
+            <FaEllipsisH size={18} className="text-gray-500 cursor-pointer"/>
         </div>
         <AttandanceChart data={data}/>
         </div>

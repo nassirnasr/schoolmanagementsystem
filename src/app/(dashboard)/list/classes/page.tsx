@@ -8,6 +8,8 @@ import { currentUserId, getRole } from "@/lib/utils"
 import { Class, Prisma, Teacher } from "@prisma/client"
 import Image from "next/image"
 import Link from "next/link"
+import { FaFilter, FaSort, FaSortAlphaDownAlt, FaSortDown } from "react-icons/fa"
+import { HiFilter, HiOutlineFilter, HiSortAscending } from "react-icons/hi"
 
 type ClassList = Class & {supervisor:Teacher};
 
@@ -111,11 +113,11 @@ const [data, count] = await prisma.$transaction([
             <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto mx-2">
                 <TableSearch/>
                 <div className="flex items-center gap-4 self-end">
-                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myYellow">
-                    <Image src="/filter.png" alt="" width={14} height={14}/>
+                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">
+                    <FaFilter size={16} className="text-gray-500"/>
                 </button>
-                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myYellow">
-                    <Image src="/sort.png" alt="" width={14} height={14}/>
+                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">
+                    <HiSortAscending size={16} className="text-gray-500"/>
                 </button>
                 {userRole==="admin" && (
                       <FormModel table="class" type="create"/>

@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import { FaEllipsisH } from "react-icons/fa";
 import { PieChart ,Pie ,Sector ,Cell,ResponsiveContainer } from "recharts"
 
 const data = [
@@ -11,7 +12,7 @@ const Performance = () => {
     <div className='bg-white p-4 rounded-md h-80 relative'>
         <div className="flex items-center justify-between">
             <h1 className="text-xl font-semibold">Performance</h1>
-            <Image src="/moreDark.png" alt="" width={16} height={16}/>
+            <FaEllipsisH size={18} className="text-gray-500"/>
         </div>
         <ResponsiveContainer width="100%" height="100%">
             <PieChart >
