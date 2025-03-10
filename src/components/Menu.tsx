@@ -24,6 +24,7 @@ import {
   FaBook,
   FaBookReader,
   FaCoins,
+  FaMoneyBillWave,
 } from "react-icons/fa";
 
 type MenuProps = {
@@ -49,7 +50,7 @@ const menuItems = [
       { icon: FaCalendarAlt, label: "Events", href: "/list/events", visible: ["admin", "teacher", "student", "parent"] },
       { icon: HiChatAlt, label: "Messages", href: "/list/messages", visible: ["admin", "teacher", "student", "parent"] },
       { icon: HiSpeakerphone, label: "Announcements", href: "/list/announcements", visible: ["admin", "teacher", "student", "parent"] },
-      { icon: FaCoins, label: "Budget", href: "/budget", visible: ["admin"] },
+      { icon: FaMoneyBillWave, label: "Accounting", href: "/list/accounting", visible: ["admin"] },
     ],
   },
   {
