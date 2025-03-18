@@ -1,74 +1,96 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // By default, you can set the sidebar open or closed.
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(true);
+  const [screenSize, setScreenSize] = useState("large");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setScreenSize("small");
+        setMenuOpen(false);
+      } else if (window.innerWidth < 1024) {
+        setScreenSize("medium");
+        setMenuOpen(false);
+      } else {
+        setScreenSize("large");
+        setMenuOpen(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("menuOpen", menuOpen.toString());
+  }, [menuOpen]);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  // On mobile (width < 768px), when a menu item is clicked, close the sidebar.
-  const handleItemClick = () => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setMenuOpen(false);
-    }
-  };
-
   return (
-    <div className="h-screen flex overflow-hidden relative">
-      {/* Overlay on mobile when sidebar is open */}
-      {menuOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-40"
-          onClick={() => setMenuOpen(false)}
-        ></div>
-      )}
+    <div className="h-screen flex overflow-hidden">
       {/* Sidebar */}
-      <div
-        className={`bg-white p-4 flex flex-col transition-all duration-300 z-50 ${
-          menuOpen ? "w-64" : "w-16"
-        }`}
+      <motion.div
+        animate={{ width: menuOpen ? 256 : 64 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`bg-white h-full flex flex-col shadow-md relative transition-all duration-300 
+          ${menuOpen ? "backdrop-blur-md" : ""}`}
       >
-        {/* Sidebar Header */}
-        <div className="flex items-center sticky top-0 bg-white z-10 px-2 py-4">
-          <div className="flex-1">
-            {menuOpen && (
-              <Link href="/" className="flex items-center gap-2">
-                <Image src="/icon.png" alt="logo" width={32} height={32} />
-                <span className="font-bold text-lg whitespace-nowrap">
-                  Shule System
-                </span>
-              </Link>
+        {/* Logo & System Name */}
+        <div className="flex flex-col items-center py-6">
+          <motion.div
+            key={menuOpen.toString()}
+            initial={{ rotateY: 0 }}
+            animate={{ rotateY: 360 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            <Image src="/icon.png" alt="logo" width={40} height={40} className="mb-2" />
+          </motion.div>
+
+          <AnimatePresence>
+            {menuOpen && screenSize === "large" && (
+              <motion.span
+                key="shule-system"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className="font-bold text-lg text-center"
+              >
+                Shule System
+              </motion.span>
             )}
-          </div>
-          <button onClick={toggleMenu} className="p-2">
-            {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-          </button>
+          </AnimatePresence>
         </div>
-        {/* Menu */}
-        <div className="mt-4 flex-grow overflow-y-auto">
-          <Menu isOpen={menuOpen} onItemClick={handleItemClick} />
+
+        {/* Toggle Button */}
+        <button onClick={toggleMenu} className="p-3 rounded-md hover:bg-gray-100">
+          {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+
+        {/* Menu with Scroll */}
+        <div className="mt-6 flex-grow w-full overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-300">
+          <Menu isOpen={menuOpen || screenSize === "large"} />
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content */}
-      <div className="flex flex-col flex-grow bg-[#F7F8FA]">
-        {/* Fixed Navbar */}
-        <div className="sticky top-0 bg-[#F7F8FA] z-10">
+      <div className="flex flex-col flex-grow bg-[#F7F8FA] px-4 py-2">
+        <div className="sticky top-0 bg-[#F7F8FA] z-10 ">
           <Navbar />
         </div>
-        {/* Scrollable Content */}
-        <div className="overflow-y-auto flex-grow">{children}</div>
+        <div className="overflow-y-auto flex-grow p-4">{children}</div>
       </div>
     </div>
   );

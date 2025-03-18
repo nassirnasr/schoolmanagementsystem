@@ -1,26 +1,36 @@
 'use client'
-import Image from "next/image"
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { HiSearch } from "react-icons/hi";
 
 const TableSearch = () => {
-
   const router = useRouter();
+  const [searchValue, setSearchValue] = useState("");
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!searchValue.trim()) return; // Prevent empty search
 
-    const value = (e.currentTarget[0] as HTMLInputElement).value;
     const params = new URLSearchParams(window.location.search);
-    params.set("search", value);
+    params.set("search", searchValue);
     router.push(`${window.location.pathname}?${params}`);
-  }
-  return (
-    <form onSubmit={handleSubmit} className="w-full md:w-auto flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
-            <Image src="/search.png" alt="" width={14} height={14}/>
-            <input type="text" placeholder="Search..." className="w-[200px] p-2 bg-transparent outline-none"/>
-        </form>
-  )
-}
+  };
 
-export default TableSearch
+  return (
+    <form 
+      onSubmit={handleSubmit} 
+      className="w-full md:w-auto flex items-center gap-2 bg-white border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400 transition-all"
+    >
+      <HiSearch size={12} className="opacity-60 text-gray-700"/>
+      <input
+        type="text"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        placeholder="Search..."
+        className="w-[180px] text-xs bg-transparent outline-none placeholder-opacity-50 placeholder-gray-500"
+      />
+    </form>
+  );
+};
+
+export default TableSearch;

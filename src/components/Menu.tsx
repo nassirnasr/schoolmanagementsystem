@@ -26,6 +26,7 @@ import {
   FaCoins,
   FaMoneyBillWave,
 } from "react-icons/fa";
+import { SignOutButton } from "@clerk/nextjs";
 
 type MenuProps = {
   isOpen: boolean;
@@ -58,7 +59,6 @@ const menuItems = [
     items: [
       { icon: FaUser, label: "Profile", href: "/profile", visible: ["admin", "teacher", "student", "parent"] },
       { icon: HiCog, label: "Settings", href: "/settings", visible: ["admin", "teacher", "student", "parent"] },
-      { icon: HiLogout, label: "Logout", href: "/logout", visible: ["admin", "teacher", "student", "parent"] },
     ],
   },
 ];
@@ -83,16 +83,16 @@ const Menu = ({ isOpen, onItemClick }: MenuProps) => {
                 <Link
                   href={item.href}
                   key={item.label}
-                  title={!isOpen ? item.label : undefined}
+                  title={isOpen ? item.label : undefined} // Show title only when open
                   onClick={() => {
                     if (onItemClick) onItemClick();
                   }}
-                  className={`flex items-center gap-2 py-2 px-2 rounded-md hover:bg-mySky ${
+                  className={`flex items-center gap-2 py-2 px-2 rounded-md hover:bg-mySky transition duration-200 ${
                     item.label === "Logout" ? "text-red-500" : "text-gray-500"
                   }`}
                 >
                   <IconComponent className="text-base" />
-                  {isOpen && <span>{item.label}</span>}
+                  {isOpen && <span>{item.label}</span>} {/* Show label only if isOpen */}
                 </Link>
               );
             }
@@ -100,6 +100,12 @@ const Menu = ({ isOpen, onItemClick }: MenuProps) => {
           })}
         </div>
       ))}
+      <SignOutButton>
+        <button className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-red-100 text-red-500">
+          <HiLogout className="text-base" />
+          {isOpen && <span>Logout</span>} {/* Show label only if isOpen */}
+        </button>
+      </SignOutButton>
     </div>
   );
 };

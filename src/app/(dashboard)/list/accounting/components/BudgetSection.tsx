@@ -1,17 +1,11 @@
-// src/app/(dashboard)/list/accounting/components/BudgetSection.tsx
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { FaPlus, FaSearch } from "react-icons/fa";
 import { Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import BudgetTable from "./BudgetTable";
+import BudgetForm from "./BudgetForm";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -26,6 +20,7 @@ const dummyBudgetData = [
 const BudgetSection = () => {
   const [search, setSearch] = useState("");
   const [filteredBudgets, setFilteredBudgets] = useState(dummyBudgetData);
+  const [isFormOpen, setIsFormOpen] = useState(false); // Toggle for form visibility
 
   useEffect(() => {
     if (search === "") {
@@ -39,10 +34,7 @@ const BudgetSection = () => {
     }
   }, [search]);
 
-  const totalAllocated = dummyBudgetData.reduce(
-    (sum, item) => sum + item.allocated,
-    0
-  );
+  const totalAllocated = dummyBudgetData.reduce((sum, item) => sum + item.allocated, 0);
   const totalSpent = dummyBudgetData.reduce((sum, item) => sum + item.spent, 0);
   const totalRemaining = totalAllocated - totalSpent;
 
@@ -72,11 +64,12 @@ const BudgetSection = () => {
             />
             <FaSearch className="absolute left-3 top-3 text-gray-400" />
           </div>
-          <Link href="/dashboard/list/budget/create">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">
-              <FaPlus /> Add Budget
-            </button>
-          </Link>
+          <button
+            onClick={() => setIsFormOpen(true)}
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm"
+          >
+            <FaPlus /> Add Budget
+          </button>
         </div>
       </div>
 
@@ -95,6 +88,8 @@ const BudgetSection = () => {
 
         <BudgetTable budgets={filteredBudgets} />
       </div>
+
+      {isFormOpen && <BudgetForm onClose={() => setIsFormOpen(false)} />} 
     </div>
   );
 };

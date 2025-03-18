@@ -1,4 +1,3 @@
-// src/app/(dashboard)/list/accounting/components/BudgetTable.tsx
 import { FaSearch } from "react-icons/fa";
 
 // Define the type for a single budget item
